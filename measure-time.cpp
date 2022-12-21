@@ -144,12 +144,20 @@ int main() {
       "libero neque.\n"
     ;
 
+    const auto REPS = 10000;
+
     auto time_encoding_begin = std::chrono::system_clock::now();
-    std::string encoded = base64_encode(reinterpret_cast<const unsigned char*>(lorem_ipsum.c_str()), lorem_ipsum.length());
+    std::string encoded;
+    for (int i = 0; i < REPS; ++i) {
+	    encoded = base64_encode(reinterpret_cast<const unsigned char*>(lorem_ipsum.c_str()), lorem_ipsum.length());
+    }
     auto time_encoding_end = std::chrono::system_clock::now();
 
     auto time_decoding_begin = std::chrono::system_clock::now();
-    std::string decoded = base64_decode(encoded);
+    std::string decoded;
+    for (int i = 0; i < REPS; ++i) {
+	    decoded = base64_decode(encoded);
+    }
     auto time_decoding_end = std::chrono::system_clock::now();
 
     std::chrono::duration<double> duration_encoding = time_encoding_end - time_encoding_begin;
