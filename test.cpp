@@ -109,7 +109,7 @@ int main() {
         all_tests_passed = false;
     }
 
-    if (a17_encoded_url != "YWFhYWFhYWFhYWFhYWFhYWE.") {
+    if (a17_encoded_url != "YWFhYWFhYWFhYWFhYWFhYWE=") {
         std::cout << "Failed to encode a17 (url)" << std::endl;
         all_tests_passed = false;
     }
@@ -138,7 +138,7 @@ int main() {
         all_tests_passed = false;
     }
 
-    if (s_6364_encoded_url!= "A-__-Q..") {
+    if (s_6364_encoded_url!= "A-__-Q==") {
         std::cout << "Failed to encode_6364 (url)" << std::endl;
         all_tests_passed = false;
     }
